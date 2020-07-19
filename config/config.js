@@ -90,7 +90,7 @@ export default defineConfig({
         },
         {
           path: '/grocery',
-          component: '../layouts/SearchLayout',
+          component: '../layouts/BlankLayout',
           routes: [
             {
               path: '/grocery',
