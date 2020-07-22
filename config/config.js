@@ -27,67 +27,12 @@ export default defineConfig({
   routes: [
     {
       path : '/',
-      redirect: '/user/login'
+      redirect: '/grocery/search'
     },
     {
       path: '/',
       component: '../layouts/BlankLayout',
       routes: [
-        {
-          path: '/user',
-          component: '../layouts/UserLayout',
-          routes: [
-            {
-              path: '/user',
-              redirect: '/user/login',
-            },
-            {
-              name: 'login',
-              icon: 'smile',
-              path: '/user/login',
-              component: './user/login',
-            },
-            {
-              name: 'register-result',
-              icon: 'smile',
-              path: '/user/register-result',
-              component: './user/register-result',
-            },
-            {
-              name: 'register',
-              icon: 'smile',
-              path: '/user/register',
-              component: './user/register',
-            },
-            {
-              name: 'profile',
-              icon: 'smile',
-              path: '/user/profile',
-              component: './user/profile',
-            },
-            {
-              name: 'checkout',
-              icon: 'smile',
-              path: '/user/checkout',
-              component: './user/checkout',
-            },
-            {
-              name: 'order-all',
-              icon: 'smile',
-              path: '/user/order/all',
-              component: './user/all_orders',
-            },
-            {
-              name: 'order',
-              icon: 'smile',
-              path: '/user/order',
-              component: './user/order',
-            },
-            {
-              component: '404',
-            },
-          ],
-        },
         {
           path: '/grocery',
           component: '../layouts/BlankLayout',
@@ -105,13 +50,13 @@ export default defineConfig({
             {
               name: 'shops-all',
               icon:'smile',
-              path: '/grocery/shops/all',
+              path: '/grocery/shops',
               component: './grocery/all_shops'
             },
             {
               name : 'shops',
               icon:'smile',
-              path:'/grocery/shops',
+              path:'/grocery/shops/:id?',
               component: './grocery/shop'
             },
             {

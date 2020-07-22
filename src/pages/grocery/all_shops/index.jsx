@@ -36,7 +36,7 @@ const AllShops = () => {
         </div>
       </div>
       <div className={styles.result}>
-        <div>
+        <div className={styles.heading}>
           <h4 className={styles.subHeader}>Showing all results for <span className={styles.resultText}>chawal</span></h4>
         </div>
         <div>
@@ -50,18 +50,18 @@ const AllShops = () => {
                     alt="item logo"
                   />
                   <div className={styles.itemDescription}>
-                    <h4>Chawal</h4>
-                    <h6>rice</h6>
+                    <h4 className={styles.product}>Chawal Kolum 1kg</h4>
+                    <h6 className={styles.category}>rice</h6>
                   </div>
                 </div>
                 <div className={styles.amount}>
-                  <h3>final amount</h3>
-                  <h4 className={styles.initialAmount}>initial amount</h4>
+                  <h3 className={styles.finalAmount}>61</h3>
+                  <h4 className={styles.initialAmount}>75</h4>
                 </div>
               </div>
               <div className={styles.description}>
-                <h3>
-                  By: Store name
+                <h3 className={styles.storeName}>
+                  By: Chandu Kirana Mart
                 </h3>
                 <h4>
                   Add to cart
