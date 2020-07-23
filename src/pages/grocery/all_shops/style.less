@@ -1,31 +1,42 @@
 @import (css) url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap");
 @import '~antd/es/style/themes/default.less';
 
+@font-family: 'Comfortaa';
+@private-primary-color : #2c3d63;
+@card-background-color: #f9f3ec;
+@font-light-color: #5f7096;
+
   :global {
     body {
-      font-family: 'Comfortaa', cursive;
+      font-family: @font-family, cursive;
     }
     .ant-btn-primary{
-      background: #2c3d63;
-      border-color:  #2c3d63;
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      background: @private-primary-color;
+      border-color:  @private-primary-color;
       border-radius: 10px;
     }
     .ant-btn-primary:hover{
-      background: #2c3d63;
-      border-color:  #2c3d63;
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      background: @private-primary-color;
+      border-color:  @private-primary-color;
       border-radius: 10px;
     }
-    //.ant-btn-primary:active{
-    //  background: #2c3d63;
-    //  border-color:  #2c3d63;
-    //  border-radius: 10px;
-    //}
     .ant-btn-primary:focus{
-      background: #2c3d63;
-      border-color:  #2c3d63;
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      background: @private-primary-color;
+      border-color:  @private-primary-color;
       border-radius: 10px;
     }
-
+    .ant-input {
+      border-radius: 10px 0 0 10px;
+    }
   }
 
 
@@ -48,7 +59,8 @@
 
 .image {
   width: 100px;
-  height: 100px;
+  height: auto;
+  margin-left: 30px;
 }
 
 .buttonContainer {
@@ -62,16 +74,48 @@
   border-radius: 10px;
 }
 
-.help {
-  color: #5f7096;
+.help{
+  color: @font-light-color;
   background: transparent;
   border: transparent;
 }
 
 .help:hover {
-  color:#5f7096;
+  color:@font-light-color;
+  background: transparent;
+  border: transparent;
+}
+
+.help:active {
+  color:@font-light-color;
+  background: transparent;
+  border: transparent;
+}
+
+.help:focus {
+  color:@font-light-color;
+  background: transparent;
+  border: transparent;
+}
+
+.join {
+  color: @private-primary-color;
+  font-weight: 700;
   background: transparent;
 }
+
+.join:hover {
+  color: @private-primary-color;
+  font-weight: 700;
+  background: transparent;
+}
+
+.join:focus {
+  color: @private-primary-color;
+  font-weight: 700;
+  background: transparent;
+}
+
 
 .search {
   align-self: center;
@@ -111,9 +155,10 @@
 
 
 .card{
-  width: 600px;
-  height: 200px;
-  background: #f9f3ec;
+  width: 900px;
+  max-height: 200px;
+  margin-bottom: 20px;
+  background: @card-background-color;
   border-radius: 10px;
 }
 
@@ -162,7 +207,7 @@
 
 .finalAmount{
   margin: 0;
-  color: #2c3d63;
+  color: @private-primary-color;
   font-weight: 400;
   font-size: 24px;
 }
@@ -170,7 +215,7 @@
 .initialAmount {
   margin: 0;
   padding: 0 10px;
-  color: #5f7096;
+  color: @font-light-color;
   font-weight: 400;
   font-size: 18px;
   text-decoration: line-through;
@@ -181,21 +226,21 @@
 }
 
 .product {
-  color: #2c3d63;
+  color: @private-primary-color;
   font-weight: 300;
   font-size: 21px;
 }
 
 .category {
   margin-left: 10px;
-  color: #5f7096;
+  color: @font-light-color;
   font-weight: 400;
   font-size: 16px;
 }
 
 .storeName {
   margin: 0 50px;
-  color: #2c3d63;
+  color: @private-primary-color;
   font-weight: 300;
   font-size: 16px;
 }

@@ -2,7 +2,6 @@ import React  from 'react';
 import {connect} from 'umi';
 import {Button,Input} from "antd";
 import { ShoppingCartOutlined  } from '@ant-design/icons';
-
 import styles from './style.less'
 
 const { Search } = Input;
@@ -14,13 +13,13 @@ const AllShops = () => {
         <div>
           <img
             className={styles.image}
-            src="https://cdn4.iconfinder.com/data/icons/vector-brand-logos/40/Instagram-512.png"
+            src='http://localhost:8000/company.png'
             alt="company logo"
           />
         </div>
         <Search
           className={styles.search}
-          placeholder="input search text"
+          placeholder="search product"
           onSearch={value => console.log(value)}
           enterButton="Search"
           size="large"
@@ -29,7 +28,7 @@ const AllShops = () => {
           <Button type="primary" size="large" className={`${styles.button}  ${styles.help}`}>
             Help
           </Button>
-          <Button type="primary" size="large" className={styles.button}>
+          <Button type="primary" size="large" className={`${styles.button} ${styles.join}`}>
             Join
           </Button>
         </div>
@@ -61,6 +60,40 @@ const AllShops = () => {
               <div className={styles.description}>
                 <h3 className={styles.storeName}>
                   By: Chandu Kirana Mart
+                </h3>
+                <Button
+                  type="primary"
+                  icon={<ShoppingCartOutlined />}
+                  // loading={loadings[2]}
+                  // onClick={() => this.enterLoading(2)}
+                >
+                  Add to cart
+                </Button>
+              </div>
+            </div>
+          </div>
+          <div className={styles.card}>
+            <div className={styles.innerCard}>
+              <div className={styles.title}>
+                <div className={styles.cardTitle}>
+                  <img
+                    className={styles.itemImage}
+                    src="https://i.pinimg.com/564x/ad/06/3d/ad063d5bc4866133a522fc6542758cf4.jpg"
+                    alt="item logo"
+                  />
+                  <div className={styles.itemDescription}>
+                    <h4 className={styles.product}>Chawal Majestic 1kg</h4>
+                    <h6 className={styles.category}>rice</h6>
+                  </div>
+                </div>
+                <div className={styles.amount}>
+                  <h3 className={styles.finalAmount}>₹61</h3>
+                  <h4 className={styles.initialAmount}>₹75</h4>
+                </div>
+              </div>
+              <div className={styles.description}>
+                <h3 className={styles.storeName}>
+                  By: DEF Kirana Store
                 </h3>
                 <Button
                   type="primary"
