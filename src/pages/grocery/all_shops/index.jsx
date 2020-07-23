@@ -1,12 +1,11 @@
 import React  from 'react';
 import {connect} from 'umi';
-import {Button,Input,Card, Avatar} from "antd";
-import { EditOutlined, EllipsisOutlined, SettingOutlined } from '@ant-design/icons';
+import {Button,Input} from "antd";
+import { ShoppingCartOutlined  } from '@ant-design/icons';
 
 import styles from './style.less'
 
 const { Search } = Input;
-const { Meta } = Card;
 
 const AllShops = () => {
   return (
@@ -46,7 +45,7 @@ const AllShops = () => {
                 <div className={styles.cardTitle}>
                   <img
                     className={styles.itemImage}
-                    src="https://freeiconshop.com/wp-content/uploads/edd/image-solid.png"
+                    src="https://i.pinimg.com/564x/c9/12/bd/c912bded9c1049f57c68516b41dd6cd1.jpg"
                     alt="item logo"
                   />
                   <div className={styles.itemDescription}>
@@ -55,17 +54,22 @@ const AllShops = () => {
                   </div>
                 </div>
                 <div className={styles.amount}>
-                  <h3 className={styles.finalAmount}>61</h3>
-                  <h4 className={styles.initialAmount}>75</h4>
+                  <h3 className={styles.finalAmount}>₹61</h3>
+                  <h4 className={styles.initialAmount}>₹75</h4>
                 </div>
               </div>
               <div className={styles.description}>
                 <h3 className={styles.storeName}>
                   By: Chandu Kirana Mart
                 </h3>
-                <h4>
+                <Button
+                  type="primary"
+                  icon={<ShoppingCartOutlined />}
+                  // loading={loadings[2]}
+                  // onClick={() => this.enterLoading(2)}
+                >
                   Add to cart
-                </h4>
+                </Button>
               </div>
             </div>
           </div>

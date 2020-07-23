@@ -1,12 +1,33 @@
+@import (css) url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap");
 @import '~antd/es/style/themes/default.less';
 
-//.ant-input {
-//  background: red;
-//}
-//
-//.ant-btn-lg {
-//  border-radius: 10px;
-//}
+  :global {
+    body {
+      font-family: 'Comfortaa', cursive;
+    }
+    .ant-btn-primary{
+      background: #2c3d63;
+      border-color:  #2c3d63;
+      border-radius: 10px;
+    }
+    .ant-btn-primary:hover{
+      background: #2c3d63;
+      border-color:  #2c3d63;
+      border-radius: 10px;
+    }
+    //.ant-btn-primary:active{
+    //  background: #2c3d63;
+    //  border-color:  #2c3d63;
+    //  border-radius: 10px;
+    //}
+    .ant-btn-primary:focus{
+      background: #2c3d63;
+      border-color:  #2c3d63;
+      border-radius: 10px;
+    }
+
+  }
+
 
 .container {
   display: flex;
@@ -42,13 +63,13 @@
 }
 
 .help {
-  color: #1890ff;
+  color: #5f7096;
   background: transparent;
   border: transparent;
 }
 
 .help:hover {
-  color:#1890ff;
+  color:#5f7096;
   background: transparent;
 }
 
@@ -76,6 +97,7 @@
 
 .resultText {
   color: black;
+  font-weight: 700;
   text-decoration: underline ;
 }
 
@@ -90,8 +112,8 @@
 
 .card{
   width: 600px;
-  height: 180px;
-  background: wheat;
+  height: 200px;
+  background: #f9f3ec;
   border-radius: 10px;
 }
 
@@ -114,7 +136,7 @@
   width: 100px;
   height: 100px;
   padding: 0;
-  background: red;
+  //background: red;
   border-radius: 10px;
 }
 
@@ -122,14 +144,16 @@
   //margin-top: 30px;
   margin-left: 30px;
   padding: 10px;
-  background: cadetblue;
+  //background: cadetblue;
 }
 
 .description {
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
   margin: 20px 0;
+  padding-bottom: 20px;
 }
 
 .amount {
@@ -138,7 +162,7 @@
 
 .finalAmount{
   margin: 0;
-  padding: 0 10px;
+  color: #2c3d63;
   font-weight: 400;
   font-size: 24px;
 }
@@ -146,6 +170,7 @@
 .initialAmount {
   margin: 0;
   padding: 0 10px;
+  color: #5f7096;
   font-weight: 400;
   font-size: 18px;
   text-decoration: line-through;
@@ -156,18 +181,23 @@
 }
 
 .product {
+  color: #2c3d63;
   font-weight: 300;
   font-size: 21px;
 }
 
 .category {
   margin-left: 10px;
-  font-weight: 300;
+  color: #5f7096;
+  font-weight: 400;
   font-size: 16px;
 }
 
 .storeName {
   margin: 0 50px;
+  color: #2c3d63;
+  font-weight: 300;
+  font-size: 16px;
 }
 
 
