@@ -17,25 +17,36 @@
       background: @private-primary-color;
       border-color:  @private-primary-color;
       border-radius: 10px;
-    }
-    .ant-btn-primary:hover{
-      display: flex;
-      align-items: center;
-      padding: 20px;
-      background: @private-primary-color;
-      border-color:  @private-primary-color;
-      border-radius: 10px;
-    }
-    .ant-btn-primary:focus{
-      display: flex;
-      align-items: center;
-      padding: 20px;
-      background: @private-primary-color;
-      border-color:  @private-primary-color;
-      border-radius: 10px;
+      &:hover{
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        background: @private-primary-color;
+        border-color:  @private-primary-color;
+        border-radius: 10px;
+      }
+      &:focus{
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        background: @private-primary-color;
+        border-color:  @private-primary-color;
+        border-radius: 10px;
+      }
+      &:active{
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        background: @private-primary-color;
+        border-color:  @private-primary-color;
+        border-radius: 10px;
+      }
     }
     .ant-input {
       border-radius: 10px 0 0 10px;
+    }
+    .ant-input-search-button{
+      padding: 0 20px;
     }
   }
 
@@ -78,42 +89,38 @@
   color: @font-light-color;
   background: transparent;
   border: transparent;
+  &:hover{
+    color: @font-light-color;
+    background: transparent;
+    border: transparent;
+  }
+  &:active{
+    color: @font-light-color;
+    background: transparent;
+    border: transparent;
+  }
+  &:focus{
+    color: @font-light-color;
+    background: transparent;
+    border: transparent;
+  }
 }
 
-.help:hover {
-  color:@font-light-color;
-  background: transparent;
-  border: transparent;
-}
-
-.help:active {
-  color:@font-light-color;
-  background: transparent;
-  border: transparent;
-}
-
-.help:focus {
-  color:@font-light-color;
-  background: transparent;
-  border: transparent;
-}
 
 .join {
   color: @private-primary-color;
   font-weight: 700;
   background: transparent;
-}
-
-.join:hover {
-  color: @private-primary-color;
-  font-weight: 700;
-  background: transparent;
-}
-
-.join:focus {
-  color: @private-primary-color;
-  font-weight: 700;
-  background: transparent;
+  &:hover{
+    color: @private-primary-color;
+    font-weight: 700;
+    background: transparent;
+  }
+  &:focus{
+    color: @private-primary-color;
+    font-weight: 700;
+    background: transparent;
+  }
 }
 
 
