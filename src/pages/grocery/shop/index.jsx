@@ -112,11 +112,11 @@ const Shops = () => {
               </Menu>
             </Sider>
             <Content style={{ padding: '0 24px', minHeight: 280 }}>
-              <div>
+              <div className={styles.filter}>
                 <h4>Sort by:</h4>
-                <Button>Price</Button>
-                <Button>Offers</Button>
-                <Button>Combos</Button>
+                <Button className={styles.sort}>Price</Button>
+                <Button className={styles.sort}>Offers</Button>
+                <Button className={styles.sort}>Combos</Button>
               </div>
               <Card
                 className={styles.card}
@@ -138,7 +138,6 @@ const Shops = () => {
             </Content>
           </Layout>
         </Content>
-        <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
       </Layout>,
     </div>
   );

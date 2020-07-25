@@ -99,6 +99,10 @@
     border-radius: 0 0 30px 30px;
   }
 
+  .ant-card-bordered .ant-card-cover {
+    margin: 0;
+  }
+
 }
 
 
@@ -237,10 +241,13 @@
 .shoppingCartItemsBox{
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: center;
+  margin-bottom: 10px;
 }
 
 .shoppingCartItems {
+  margin-bottom: 0;
   margin-left: 10px;
   color: white;
 }
@@ -255,12 +262,13 @@
   padding: 3px 20px;
   color: #2c3d63;
   background: #f9f3ec;
+  border-radius: 10px;
 }
 
 .image {
+  height: 200px;
   padding: 10px;
   background: #f9f3ec;
-  height: 200px;
 }
 
 .card{
@@ -271,4 +279,14 @@
 
 .cardMeta {
   background: #f9f3ec;
+}
+
+.filter {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.sort {
+  margin-left: 10px;
 }
