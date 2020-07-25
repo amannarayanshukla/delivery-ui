@@ -1,6 +1,6 @@
-import React  from 'react';
+import React, { useState }  from 'react';
 import {connect} from 'umi';
-import {Button,Input,Layout, Menu,Tree,Card} from "antd";
+import {Button,Input,Layout, Menu,Tree,Card,Drawer} from "antd";
 import {DownOutlined, ShoppingCartOutlined } from '@ant-design/icons';
 import styles from './style.less';
 
@@ -13,8 +13,22 @@ const { Meta } = Card;
 
 
 const Shops = () => {
+  const [visible, setVisible] = useState(false);
+
   const onSelect = (selectedKeys, info) => {
     console.log('selected', selectedKeys, info);
+  };
+
+  const showDrawer = () => {
+    const element = document.getElementById('shoppingCart')
+    element.style.display = "none";
+    setVisible(true);
+  };
+
+  const onClose = () => {
+    const element = document.getElementById('shoppingCart')
+    element.style.display = "flex"
+    setVisible(false);
   };
   return (
     <div>
@@ -43,7 +57,7 @@ const Shops = () => {
         size="large"
       />
     </div>
-      <div className={styles.shoppingCart}>
+      <div id="shoppingCart" className={styles.shoppingCart} onClick={showDrawer}>
         <div className={styles.shoppingCartItemsBox}>
           <ShoppingCartOutlined/>
           <h5 className={styles.shoppingCartItems}>0 items</h5>
@@ -52,6 +66,18 @@ const Shops = () => {
           <h5 className={styles.shoppingCartTotal}>₹0.00</h5>
         </div>
       </div>
+      <Drawer
+        title={<div className={styles.drawerTitle}><ShoppingCartOutlined/><span className={styles.drawerTitleHeading}>Your cart</span></div>}
+        placement="right"
+        onClose={onClose}
+        visible={visible}
+        width = "400px"
+        footer={<Button className={styles.cartCheckout}>Checkout <span className={styles.innerCartCheckout}>₹0.00</span></Button>}
+      >
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+        <p>Some contents...</p>
+      </Drawer>
       <Layout>
         <Content theme="light" style={{ padding: '0 50px' }}>
           <Layout className="site-layout-background" style={{ padding: '24px 0' }}>
