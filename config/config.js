@@ -64,6 +64,37 @@ export default defineConfig({
             },
           ],
         },
+        {
+          path: '/user',
+          component:'../layouts/BlankLayout',
+          routes:[
+            {
+              path: '/user',
+              redirect: '/user/profile',
+            },
+            {
+              name:'profile',
+              icon:'smile',
+              path:'/user/profile',
+              component: './user/profile',
+            },
+            {
+              name:'checkout',
+              icon:'smile',
+              path:'/user/checkout',
+              component: './user/checkout',
+            },
+            {
+              name:'order',
+              icon: 'smile',
+              path:'/user/order',
+              component: './user/order',
+            },
+            {
+              component:'404'
+            },
+          ]
+        }
       ],
     },
   ],
