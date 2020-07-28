@@ -1,0 +1,161 @@
+@import (css) url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap");
+@import '~antd/es/style/themes/default.less';
+
+@font-family: 'Comfortaa';
+@private-primary-color : #2c3d63;
+@card-background-color: #f9f3ec;
+@font-light-color: #5f7096;
+
+
+:global {
+  body {
+    font-family: @font-family, cursive;
+  }
+  .ant-btn-primary{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: @private-primary-color;
+    border-color:  @private-primary-color;
+    border-radius: 10px;
+    &:hover{
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      background: @private-primary-color;
+      border-color:  @private-primary-color;
+      border-radius: 10px;
+    }
+    &:focus{
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      background: @private-primary-color;
+      border-color:  @private-primary-color;
+      border-radius: 10px;
+    }
+    &:active{
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      background: @private-primary-color;
+      border-color:  @private-primary-color;
+      border-radius: 10px;
+    }
+  }
+  //.ant-input {
+  //  border-radius: 10px 0 0 10px;
+  //}
+  .ant-input-search-button{
+    padding: 0 20px;
+  }
+  .ant-layout{
+    background: #fff;
+  }
+  .ant-layout-footer{
+    background: #fff;
+  }
+  //.site-layout-background{
+  //
+  //}
+  .ant-input{
+    width: 20vw;
+    margin-left: 10px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #d4d4d4;
+    border-radius: 10px;
+  }
+
+  .ant-card {
+    width: 15vw;
+    margin: 20px;
+    font-size: 12px;
+    background: @card-background-color;
+    border-radius: 10px;
+  }
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  border-bottom: 1px solid #d4d4d4;
+}
+
+.navButton {
+  margin: 20px 15px;
+  border: none;
+}
+
+.userBasicInfo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.userName {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  margin: 10px 20px;
+  font-size: 18px;
+}
+
+.userEmail {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  margin: 10px 20px;
+  font-size: 18px;
+}
+
+.userContactInfo {
+  display: flex;
+  flex-direction: row;
+}
+
+.userDeliveryAddress {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.saveButton {
+  background: rgb(0, 158, 127);
+  border: 1px solid rgb(0, 158, 127);
+  &:hover {
+    color:  rgb(0, 158, 127);
+    background: white;
+    border: 1px solid rgb(0, 158, 127);
+  }
+  &:active {
+    color:  rgb(0, 158, 127);
+    background: white;
+    border: 1px solid rgb(0, 158, 127);
+  }
+  &:focus {
+    color:  rgb(0, 158, 127);
+    background: white;
+    border: 1px solid rgb(0, 158, 127);
+  }
+}
+
+.addAddress {
+  width: 15vw;
+  height: 140px;
+  margin-top: 20px;
+  margin-left: 20px;
+  padding-top: 5%;
+  text-align: center;
+  border: 1px solid @private-primary-color;
+  border-radius: 10px;
+  transition: 0.3s all;
+
+  &:hover{
+    color: @card-background-color;
+    background: @private-primary-color;
+    border: none;
+  }
+}
