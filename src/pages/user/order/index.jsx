@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from "umi";
 import {Layout, Menu, Button, Avatar, Card, Steps, Table} from 'antd';
 import { UserOutlined, ShopOutlined, QuestionOutlined , LogoutOutlined, ProfileOutlined  } from '@ant-design/icons';
+import InfiniteScroll from 'react-infinite-scroller';
 
 import styles from './styles.less'
 
@@ -68,7 +69,7 @@ class Profile extends Component {
             theme="light"
           >
             <div className="logo" />
-            <Menu theme="light" mode="inline" defaultSelectedKeys={['3']}>
+            <Menu theme="light" mode="inline" defaultSelectedKeys={['1']}>
               <Menu.Item key="1" icon={<ShopOutlined />}>
                 Your Order
               </Menu.Item>
@@ -88,62 +89,72 @@ class Profile extends Component {
               <div className="site-layout-background" style={{ padding: 24, minHeight: 360 }}>
                 <div className={styles.order}>
                   <h2 className={styles.heading}>My Orders</h2>
-                  <Card title="Order #1">
-                    <div className={styles.orderCard}>
-                      <p>Order Date:</p>
-                      <p>7th April 2019 </p>
-                    </div>
-                    <div className={styles.orderCard}>
-                      <p>Delivery Time:</p>
-                      <p>13th April</p>
-                    </div>
-                    <div className={`${styles.orderCard} ${styles.totalPrice}`}>
-                      <p>Total Price:</p>
-                      <p>$249.7</p>
-                    </div>
-                  </Card>
-                  <Card title="Order #2">
-                    <div className={styles.orderCard}>
-                      <p>Order Date:</p>
-                      <p>7th April 2019 </p>
-                    </div>
-                    <div className={styles.orderCard}>
-                      <p>Delivery Time:</p>
-                      <p>13th April</p>
-                    </div>
-                    <div className={`${styles.orderCard} ${styles.totalPrice}`}>
-                      <p>Total Price:</p>
-                      <p>$249.7</p>
-                    </div>
-                  </Card>
-                  <Card title="Order #3">
-                    <div className={styles.orderCard}>
-                      <p>Order Date:</p>
-                      <p>7th April 2019 </p>
-                    </div>
-                    <div className={styles.orderCard}>
-                      <p>Delivery Time:</p>
-                      <p>13th April</p>
-                    </div>
-                    <div className={`${styles.orderCard} ${styles.totalPrice}`}>
-                      <p>Total Price:</p>
-                      <p>$249.7</p>
-                    </div>
-                  </Card>
-                  <Card title="Order #4">
-                    <div className={styles.orderCard}>
-                      <p>Order Date:</p>
-                      <p>7th April 2019 </p>
-                    </div>
-                    <div className={styles.orderCard}>
-                      <p>Delivery Time:</p>
-                      <p>13th April</p>
-                    </div>
-                    <div className={`${styles.orderCard} ${styles.totalPrice}`}>
-                      <p>Total Price:</p>
-                      <p>$249.7</p>
-                    </div>
-                  </Card>
+                  <div style={{height:"700px",overflow:"auto"}}>
+                    <InfiniteScroll
+                      pageStart={0}
+                      // loadMore={loadFunc}
+                      hasMore={true || false}
+                      loader={<div className="loader" key={0}>Loading ...</div>}
+                      useWindow={false}
+                    >
+                      <Card title="Order #1">
+                        <div className={styles.orderCard}>
+                          <p>Order Date:</p>
+                          <p>7th April 2019 </p>
+                        </div>
+                        <div className={styles.orderCard}>
+                          <p>Delivery Time:</p>
+                          <p>13th April</p>
+                        </div>
+                        <div className={`${styles.orderCard} ${styles.totalPrice}`}>
+                          <p>Total Price:</p>
+                          <p>$249.7</p>
+                        </div>
+                      </Card>
+                      <Card title="Order #2">
+                        <div className={styles.orderCard}>
+                          <p>Order Date:</p>
+                          <p>7th April 2019 </p>
+                        </div>
+                        <div className={styles.orderCard}>
+                          <p>Delivery Time:</p>
+                          <p>13th April</p>
+                        </div>
+                        <div className={`${styles.orderCard} ${styles.totalPrice}`}>
+                          <p>Total Price:</p>
+                          <p>$249.7</p>
+                        </div>
+                      </Card>
+                      <Card title="Order #3">
+                        <div className={styles.orderCard}>
+                          <p>Order Date:</p>
+                          <p>7th April 2019 </p>
+                        </div>
+                        <div className={styles.orderCard}>
+                          <p>Delivery Time:</p>
+                          <p>13th April</p>
+                        </div>
+                        <div className={`${styles.orderCard} ${styles.totalPrice}`}>
+                          <p>Total Price:</p>
+                          <p>$249.7</p>
+                        </div>
+                      </Card>
+                      <Card title="Order #4">
+                        <div className={styles.orderCard}>
+                          <p>Order Date:</p>
+                          <p>7th April 2019 </p>
+                        </div>
+                        <div className={styles.orderCard}>
+                          <p>Delivery Time:</p>
+                          <p>13th April</p>
+                        </div>
+                        <div className={`${styles.orderCard} ${styles.totalPrice}`}>
+                          <p>Total Price:</p>
+                          <p>$249.7</p>
+                        </div>
+                      </Card>
+                    </InfiniteScroll>
+                  </div>
                 </div>
                 <div className={styles.orderDetails}>
                   <h2 className={styles.heading}>Order Details</h2>
