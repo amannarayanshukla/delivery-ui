@@ -1,0 +1,239 @@
+@import (css) url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap");
+@import '~antd/es/style/themes/default.less';
+
+@font-family: 'Comfortaa';
+@card-background-color: #f9f3ec;
+@font-light-color: #5f7096;
+@color-main: #2c3d63;
+
+:global {
+  body {
+    font-family: @font-family, cursive;
+  }
+  .ant-btn-primary{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: @color-main;
+    border-color:  @color-main;
+    border-radius: 10px;
+    &:hover{
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      background: @color-main;
+      border-color:  @color-main;
+      border-radius: 10px;
+    }
+    &:focus{
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      background: @color-main;
+      border-color:  @color-main;
+      border-radius: 10px;
+    }
+    &:active{
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      background: @color-main;
+      border-color:  @color-main;
+      border-radius: 10px;
+    }
+  }
+  .ant-input-search-button{
+    padding: 0 20px;
+  }
+  .ant-layout{
+    background: #fff;
+  }
+  .ant-layout-footer{
+    background: #fff;
+  }
+  .site-layout-background {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .ant-input{
+    width: 20vw;
+    margin-left: 10px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #d4d4d4;
+    border-radius: 10px;
+  }
+
+  .ant-card {
+    width: 20vw;
+    margin: 20px;
+    font-size: 12px;
+    border-radius: 10px;
+    transition: all 0.3s;
+    &:hover {
+      border: 1px solid #008080;
+    }
+    &:active {
+      border: 1px solid #008080;
+    }
+    &:focus {
+      border: 1px solid #008080;
+    }
+  }
+
+  .ant-steps {
+    padding: 30px 50px;
+  }
+
+  .ant-table-cell {
+    text-align: center;
+  }
+
+  .ant-table-thead > tr > th {
+    text-align: center;
+  }
+
+  .ant-layout-sider {
+    height: 200px;
+    margin-top: 10%;
+  }
+
+  .ant-menu-inline{
+    border: none;
+  }
+}
+
+.order {
+  flex-grow: 3;
+  max-width: 75vw;
+  margin-right: 20px;
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 10px;
+}
+
+.orderDetails {
+  margin-left: 20px;
+}
+
+.orderDetailsAmountHeading {
+  margin-right: 30px;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  border-bottom: 1px solid #d4d4d4;
+}
+
+.navButton {
+  margin: 20px 15px;
+  border: none;
+}
+
+.userBasicInfo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.userName {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  margin: 10px 20px;
+  font-size: 18px;
+}
+
+.userEmail {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  margin: 10px 20px;
+  font-size: 18px;
+}
+
+.userContactInfo {
+  display: flex;
+  flex-direction: row;
+}
+
+.deliveryContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 15px;
+}
+
+.userDeliveryAddress {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.addButton {
+  cursor: pointer;
+  &:hover {
+    color : #008080;
+  }
+  &:active {
+    color : #008080;
+  }
+  &:focus {
+    color: #008080;
+  }
+}
+
+.saveButton {
+  background: rgb(0, 158, 127);
+  border: 1px solid rgb(0, 158, 127);
+  &:hover {
+    color:  rgb(0, 158, 127);
+    background: white;
+    border: 1px solid rgb(0, 158, 127);
+  }
+  &:active {
+    color:  rgb(0, 158, 127);
+    background: white;
+    border: 1px solid rgb(0, 158, 127);
+  }
+  &:focus {
+    color:  rgb(0, 158, 127);
+    background: white;
+    border: 1px solid rgb(0, 158, 127);
+  }
+}
+
+.addAddress {
+  width: 15vw;
+  height: 140px;
+  margin-top: 20px;
+  margin-left: 20px;
+  padding-top: 5%;
+  text-align: center;
+  border: 1px solid @color-main;
+  border-radius: 10px;
+  transition: 0.3s all;
+
+  &:hover{
+    color: @color-main;
+    background: @color-main;
+    border: none;
+  }
+}
+
+.heading {
+  text-align: center;
+}
+.orderCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.totalPrice {
+  font-weight: 900;
+}
