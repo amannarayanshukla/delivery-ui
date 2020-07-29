@@ -6,7 +6,7 @@ import InfiniteScroll from 'react-infinite-scroller';
 
 import styles from './styles.less'
 
-const { Content, Footer, Sider } = Layout;
+const { Content, Sider } = Layout;
 const { Step } = Steps;
 
 const columns = [
@@ -197,7 +197,6 @@ class Profile extends Component {
                 </div>
               </div>
             </Content>
-            <Footer style={{ textAlign: 'center' }}>Powered by Company Name</Footer>
           </Layout>
         </Layout>
       </div>
