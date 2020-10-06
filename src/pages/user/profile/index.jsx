@@ -1,11 +1,18 @@
-import React, {Component} from 'react';
-import {connect} from "umi";
-import { Form, Modal, Layout, Menu, Button,Avatar,Input,Card } from 'antd';
-import { UploadOutlined, UserOutlined, VideoCameraOutlined, ShopOutlined, QuestionOutlined , LogoutOutlined, ProfileOutlined ,EditOutlined } from '@ant-design/icons';
+import React, { Component } from 'react';
+import { connect } from 'umi';
+import { Form, Modal, Layout, Menu, Button, Avatar, Input, Card, Dropdown } from 'antd';
+import {
+  UserOutlined,
+  ShopOutlined,
+  QuestionOutlined,
+  LogoutOutlined,
+  ProfileOutlined,
+} from '@ant-design/icons';
 
-import styles from './styles.less'
+import styles from './styles.less';
+import { routerRedux } from 'dva/router';
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Content, Footer, Sider } = Layout;
 
 const layout = {
   labelCol: { span: 8 },
@@ -15,19 +22,37 @@ const tailLayout = {
   wrapperCol: { offset: 8, span: 16 },
 };
 
-const onFinish = values => {
+const onFinish = (values) => {
   console.log('Success:', values);
 };
 
-const onFinishFailed = errorInfo => {
+const onFinishFailed = (errorInfo) => {
   console.log('Failed:', errorInfo);
 };
 
+@connect((state) => ({
+  userInformation: state.userInformation,
+}))
 class Profile extends Component {
   state = {
     loading: false,
     visible: false,
   };
+
+  componentDidMount() {
+    const { dispatch } = this.props;
+
+    const accessToken = localStorage.getItem('accessToken');
+    const uuid = localStorage.getItem('uuid');
+
+    dispatch({
+      type: 'userInformation/fetchUserInformation',
+      accessToken,
+      uuid,
+    }).then(() => {
+      console.log(this.props, ' : fetchUserInformation props');
+    });
+  }
 
   showModal = () => {
     this.setState({
@@ -46,22 +71,80 @@ class Profile extends Component {
     this.setState({ visible: false });
   };
 
+  changePage = (path) => () => {
+    const { dispatch } = this.props;
+    dispatch(routerRedux.push(`${path}`));
+  };
+
+  menu = (
+    <Menu>
+      <Menu.Item>
+        <a rel="profile page" onClick={this.changePage('/user/profile')}>
+          Profile
+        </a>
+      </Menu.Item>
+      <Menu.Item>
+        <a rel="profile page" onClick={this.changePage('/user/checkout')}>
+          Checkout
+        </a>
+      </Menu.Item>
+      <Menu.Item>
+        <a rel="profile page" onClick={this.changePage('/user/order')}>
+          Your Order
+        </a>
+      </Menu.Item>
+      {/* //  TODO: terms and services pages */}
+      <Menu.Item>
+        <a>Terms and Services</a>
+      </Menu.Item>
+      {/* //  TODO: privacy policy page */}
+      <Menu.Item>
+        <a>Privacy policy</a>
+      </Menu.Item>
+      {/* //  TODO: logout API and show join button again */}
+      <Menu.Item>
+        <a>Logout</a>
+      </Menu.Item>
+    </Menu>
+  );
 
   render() {
     const { visible, loading } = this.state;
+    let name;
+    let email;
+    let primaryContact;
+    let secondaryContact;
+    let addresses;
+    let { payload } = this.props.userInformation;
+    if (typeof payload === 'string') {
+      payload = JSON.parse(payload);
+    }
+    if (payload) {
+      name = payload.data.user.name;
+      email = payload.data.user.email;
+      primaryContact = payload.data.user.primaryContact;
+      secondaryContact = payload.data.user.secondaryContact;
+      addresses = payload.data.address;
+    }
+
+    console.log(payload, 'PAYLOAD profile page');
     return (
       <div>
         <div className={styles.navigation}>
           <Button className={styles.navButton}>Offer</Button>
           <Button className={styles.navButton}>Need Help</Button>
-          <Avatar icon={<UserOutlined />} className={styles.navButton}/>
+
+          <Dropdown overlay={this.menu}>
+            <a className={styles.navButton} onClick={(e) => e.preventDefault()}>
+              <Avatar icon={<UserOutlined />} />
+            </a>
+          </Dropdown>
         </div>
         <Layout>
-
           <Sider
             breakpoint="lg"
             collapsedWidth="0"
-            onBreakpoint={broken => {
+            onBreakpoint={(broken) => {
               console.log(broken);
             }}
             onCollapse={(collapsed, type) => {
@@ -92,12 +175,12 @@ class Profile extends Component {
                   <h2>Your profile</h2>
                   <div className={styles.userBasicInfo}>
                     <div className={styles.userName}>
-                      <h5>Name  </h5>
-                      <Input placeholder="Name" />
+                      <h5>Name </h5>
+                      <Input placeholder="Name" value={name} />
                     </div>
                     <div className={styles.userEmail}>
-                      <h5>Email  </h5>
-                      <Input placeholder="Email" />
+                      <h5>Email </h5>
+                      <Input placeholder="Email" value={email} />
                     </div>
                     <Button type="primary" size="large" className={styles.saveButton}>
                       Save
@@ -107,35 +190,44 @@ class Profile extends Component {
                 <div>
                   <h2>Contact Number</h2>
                   <div className={styles.userContactInfo}>
-                    <Card title="Primary" >
-                      202-555-0191
+                    <Card title="Primary" style={{ display: primaryContact ? 'block' : 'none' }}>
+                      {primaryContact}
                     </Card>
-                    <Card title="Secondary" >
-                      202-555-0192
+                    <Card
+                      title="Secondary"
+                      style={{ display: secondaryContact ? 'block' : 'none' }}
+                    >
+                      {secondaryContact}
                     </Card>
                   </div>
                 </div>
                 <div>
                   <h2>Delivery Address</h2>
                   <div className={styles.userDeliveryAddress}>
-                    <Card title="Home" >
-                      27 Street, 2569 Heritage Road Visalia, CA 93291
-                    </Card>
-                    <Card title="Office" >
-                      33 Baker Street, Crescent Road, CA 65746
-                    </Card>
-                    <Card title="Home" >
-                      27 Street, 2569 Heritage Road Visalia, CA 93291
-                    </Card>
-                    <Card title="Office" >
-                      33 Baker Street, Crescent Road, CA 65746
-                    </Card>
-                    <Card title="Home" >
-                      27 Street, 2569 Heritage Road Visalia, CA 93291
-                    </Card>
-                    <Card title="Office" >
-                      33 Baker Street, Crescent Road, CA 65746
-                    </Card>
+                    {addresses
+                      ? addresses.map((address) => {
+                          const {
+                            flatNo,
+                            houseNo,
+                            apartmentName,
+                            street,
+                            area,
+                            landmark,
+                            pinCode,
+                            city,
+                            state,
+                          } = address.value[0];
+                          const { nickname, contactNumber } = address.value[0].delivery;
+                          return (
+                            <Card title={nickname}>
+                              <p>Contact number {contactNumber}</p>
+                              {flatNo} {houseNo} {apartmentName} {street} {area} {landmark}{' '}
+                              {pinCode} {city} {state}
+                            </Card>
+                          );
+                        })
+                      : ''}
+
                     <p className={styles.addAddress} onClick={this.showModal}>
                       Add Address
                     </p>
@@ -234,12 +326,12 @@ class Profile extends Component {
                 </Modal>
               </div>
             </Content>
-            <Footer style={{ textAlign: 'center' }}>Powered by Company Name</Footer>
+            <Footer style={{ textAlign: 'center' }}>Powered by Motabhaai</Footer>
           </Layout>
         </Layout>
       </div>
-    )
+    );
   }
 }
 
-export default connect(()=>({}))(Profile);
+export default connect(() => ({}))(Profile);

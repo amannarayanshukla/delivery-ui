@@ -1,64 +1,62 @@
-@import (css) url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap");
+@import (css)
+  url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
 @import '~antd/es/style/themes/default.less';
 
 @font-family: 'Comfortaa';
-@private-primary-color : #2c3d63;
+@private-primary-color: #2c3d63;
 @card-background-color: #f9f3ec;
 @font-light-color: #5f7096;
-
 
 :global {
   body {
     font-family: @font-family, cursive;
   }
-  .ant-btn-primary{
+  .ant-btn-primary {
     display: flex;
     align-items: center;
     padding: 20px;
     background: @private-primary-color;
-    border-color:  @private-primary-color;
+    border-color: @private-primary-color;
     border-radius: 10px;
-    &:hover{
+    &:hover {
       display: flex;
       align-items: center;
       padding: 20px;
       background: @private-primary-color;
-      border-color:  @private-primary-color;
+      border-color: @private-primary-color;
       border-radius: 10px;
     }
-    &:focus{
+    &:focus {
       display: flex;
       align-items: center;
       padding: 20px;
       background: @private-primary-color;
-      border-color:  @private-primary-color;
+      border-color: @private-primary-color;
       border-radius: 10px;
     }
-    &:active{
+    &:active {
       display: flex;
       align-items: center;
       padding: 20px;
       background: @private-primary-color;
-      border-color:  @private-primary-color;
+      border-color: @private-primary-color;
       border-radius: 10px;
     }
   }
   //.ant-input {
   //  border-radius: 10px 0 0 10px;
   //}
-  .ant-input-search-button{
+  .ant-input-search-button {
     padding: 0 20px;
   }
-  .ant-layout{
+  .ant-layout {
     background: #fff;
   }
-  .ant-layout-footer{
+  .ant-layout-footer {
     background: #fff;
   }
-  //.site-layout-background{
-  //
-  //}
-  .ant-input{
+
+  .ant-input {
     width: 20vw;
     margin-left: 10px;
     padding: 10px;
@@ -73,6 +71,11 @@
     font-size: 12px;
     background: @card-background-color;
     border-radius: 10px;
+  }
+
+  .site-layout-background {
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -89,7 +92,7 @@
   border: none;
 }
 
-.userBasicInfo{
+.userBasicInfo {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -126,17 +129,17 @@
   background: rgb(0, 158, 127);
   border: 1px solid rgb(0, 158, 127);
   &:hover {
-    color:  rgb(0, 158, 127);
+    color: rgb(0, 158, 127);
     background: white;
     border: 1px solid rgb(0, 158, 127);
   }
   &:active {
-    color:  rgb(0, 158, 127);
+    color: rgb(0, 158, 127);
     background: white;
     border: 1px solid rgb(0, 158, 127);
   }
   &:focus {
-    color:  rgb(0, 158, 127);
+    color: rgb(0, 158, 127);
     background: white;
     border: 1px solid rgb(0, 158, 127);
   }
@@ -153,7 +156,7 @@
   border-radius: 10px;
   transition: 0.3s all;
 
-  &:hover{
+  &:hover {
     color: @card-background-color;
     background: @private-primary-color;
     border: none;
